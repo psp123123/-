@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天庭系统</title>
+</head>
+<body>
+    <div>
+        <table border="2">
+            <tr>
+                <td>序号</td>
+                <td>IP</td>
+                <td>状态</td>
+                <td>检测</td>
+            </tr>
+            <tr>
+                <td>{{.Num}}</td>
+                <td>{{.Host}}</td>
+                <td>
+                    <form>
+                        <if condition="on">
+                            <input type="radio" checked="checked" name="HostStatus" value="male"/>
+<!--                            <elseif condition="off"/>-->
+<!--                            <input type="radio" checked="checked" name="HostStatus" value="female"/>-->
+                        </if>
+                    </form>
+                </td>
+                <td><input type="submit" value="检测"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
