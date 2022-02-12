@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"net/http"
-
 	"github.com/gin-gonic/gin"
+	"net/http"
+	"common"
 )
 
 //func server()  {
@@ -25,6 +25,9 @@ func main() {
 	r.POST("/post_context", func(c *gin.Context) {
 		host_context := c.PostForm("host_client_context")
 		host_status := c.PostForm("host_client_status")
+		if string(host_status) == "server_on" {
+			fmt.Println("client is connected")
+		}
 		fmt.Println(host_context,host_status)
 		c.String(http.StatusOK,host_status)
 
